@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Cambio de Titulo| Lic. Gonzalo Yanzón</title>
+	<title>Curso Manipulación de Alimentos | Lic. Gonzalo Yanzón</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-	<!-- [ESTILOS CSS: Podés colapsar este bloque para que no ocupe espacio] -->
+	<!-- [ESTILOS CSS] -->
 	<style>
 		:root {
 			--primary-dark: #0f172a;
@@ -41,13 +41,26 @@
 		ul { list-style: none; margin: 1rem 0; }
 		li { margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 12px; }
 		li i { color: var(--accent-green); margin-top: 5px; }
-		.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; background-color: var(--accent-blue); color: #ffffff; text-align: center; padding: 1rem; border-radius: 10px; text-decoration: none; font-weight: 600; margin-top: 1rem; transition: background-color 0.2s; box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.2); }
+		.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; background-color: var(--accent-blue); color: #ffffff; text-align: center; padding: 1rem; border-radius: 10px; text-decoration: none; font-weight: 600; margin-top: 1rem; transition: background-color 0.2s; box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.2); cursor: pointer; border: none; font-size: 1rem; }
 		.btn:hover { background-color: #0369a1; }
 		.btn-outline { background-color: transparent; color: var(--accent-blue); border: 2px solid var(--accent-blue); box-shadow: none; }
 		.btn-outline:hover { background-color: rgba(2, 132, 199, 0.05); }
+		.btn-whatsapp { background-color: #25d366; box-shadow: 0 4px 6px -1px rgba(37, 211, 102, 0.3); }
+		.btn-whatsapp:hover { background-color: #1ebd59; }
+		.btn-orange { background-color: #f97316; box-shadow: 0 4px 6px -1px rgba(249, 115, 22, 0.3); }
+		.btn-orange:hover { background-color: #ea580c; }
 		.contact-list li { font-size: 1.1rem; padding: 0.5rem; background-color: var(--bg-light); border: 1px solid var(--card-border); border-radius: 10px; margin-bottom: 1rem; }
 		.contact-list a { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
 		.contact-list a:hover { text-decoration: underline; }
+		
+		.inscripcion-box { background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem; }
+		.paso-contenedor { background-color: #ffffff; border: 1px solid var(--card-border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1.25rem; }
+		.form-group { margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 5px; }
+		.form-group label { font-weight: 600; color: var(--primary-dark); }
+		.form-control { padding: 0.75rem; border: 1px solid var(--card-border); border-radius: 8px; font-size: 1rem; color: var(--text-main); }
+		.form-control:focus { outline: none; border-color: var(--accent-blue); }
+		.total-box { font-size: 1.4rem; font-weight: 700; color: var(--primary-dark); margin: 1rem 0; padding: 0.5rem; background: #f8fafc; border-radius: 8px; border: 1px dashed #10b981; text-align: center; }
+
 		footer { background-color: var(--primary-dark); color: #64748b; text-align: center; padding: 2.5rem 1.5rem; font-size: 0.85rem; border-top: 1px solid #1e293b; }
 		@media (max-width: 650px) {
 			body { padding-top: 60px; }
@@ -61,9 +74,6 @@
 
 <body>
 
-	<!-- ========================================== -->
-	<!-- MENU DE NAVEGACION                         -->
-	<!-- ========================================== -->
 	<nav>
 		<div class="menu-container">
 			<a onclick="showSection('presentacion')" id="tab-presentacion" class="active"><i class="fa-solid fa-user"></i> Presentación</a>
@@ -82,9 +92,7 @@
 
 	<main>
 
-		<!-- ========================================== -->
-		<!-- BLOQUE: PRESENTACIÓN                       -->
-		<!-- ========================================== -->
+		<!-- BLOQUE: PRESENTACIÓN -->
 		<section id="presentacion" class="section-card active">
 			<h2 class="card-title"><i class="fa-solid fa-user-tie"></i> Presentación</h2>
 			<p>¡Bienvenidos a todos! Mi nombre es <strong>Gonzalo Yanzón</strong>, Licenciado en Bromatología (Mat. 616), y seré el capacitador encargado de guiarlos a lo largo de este trayecto formativo.</p>
@@ -106,10 +114,7 @@
 			</ul>
 		</section>
 
-
-		<!-- ========================================== -->
-		<!-- BLOQUE: CURSADO (DESARROLLO)               -->
-		<!-- ========================================== -->
+		<!-- BLOQUE: CURSADO -->
 		<section id="cursado" class="section-card">
 			<h2 class="card-title"><i class="fa-solid fa-graduation-cap"></i> Desarrollo del Curso</h2>
 			<p>El curso se dictará completamente a través del grupo de WhatsApp en modalidad <strong>ASINCRÓNICA</strong>. Esto significa que no hay horarios fijos de conexión; cada participante gestiona sus tiempos y visualiza los contenidos según su disponibilidad.</p>
@@ -125,10 +130,7 @@
 			<p>Mantener una participación activa en las dinámicas diarias propuestas y completar satisfactoriamente el <strong>Examen Final</strong> mediante un enlace de <strong>Google Forms</strong>.</p>
 		</section>
 
-
-		<!-- ========================================== -->
-		<!-- BLOQUE: EL CARNET                          -->
-		<!-- ========================================== -->
+		<!-- BLOQUE: EL CARNET -->
 		<section id="carnet" class="section-card">
 			<h2 class="card-title"><i class="fa-solid fa-file-invoice"></i> Información del Carnet (Art. 21 CAA)</h2>
 			<p>Conozca en detalle las características legales, requisitos y obligaciones de la certificación oficial regulada por el Código Alimentario Argentino:</p>
@@ -179,10 +181,7 @@
 			</div>
 		</section>
 
-
-		<!-- ========================================== -->
-		<!-- BLOQUE: MATERIAL                           -->
-		<!-- ========================================== -->
+		<!-- BLOQUE: MATERIAL -->
 		<section id="material" class="section-card">
 			<h2 class="card-title"><i class="fa-solid fa-book-bookmark"></i> Material de Estudio y Prácticas</h2>
 			<p>Para asegurar que dispongas de todas las herramientas de estudio de manera cómoda, dividiremos los recursos así:</p>
@@ -191,13 +190,10 @@
 				<li><i class="fa-solid fa-circle-dot"></i> <strong>Contenidos en el Grupo:</strong> Envío periódico de resúmenes prácticos ideales para leer en el celular.</li>
 				<li><i class="fa-solid fa-circle-dot"></i> <strong>Link de Acceso Permanente:</strong> Un repositorio digital en la nube con todo el Material Complementario.</li>
 			</ul>
-			<a href="#" target="_blank" class="btn btn-outline"><i class="fa-solid fa-cloud-arrow-down"></i> Descargar Material Complementario</a>
+			<a href="https://drive.google.com/drive/folders/15sQ_L5qotz6j5a4Rvr-gZ0rZIEhCarI4?usp=sharing" target="_blank" class="btn btn-outline"><i class="fa-solid fa-cloud-arrow-down"></i> Descargar Material Complementario</a>
 		</section>
 
-
-		<!-- ========================================== -->
-		<!-- BLOQUE: CONSULTAS                          -->
-		<!-- ========================================== -->
+		<!-- BLOQUE: CONSULTAS -->
 		<section id="consultas" class="section-card">
 			<h2 class="card-title"><i class="fa-solid fa-circle-question"></i> Dudas, Consultas y Comunidad</h2>
 			<p>Para garantizar una cursada ordenada y fluida, nos organizaremos bajo las siguientes pautas de convivencia:</p>
@@ -211,18 +207,63 @@
 			<a href="#" target="_blank" class="btn btn-outline"><i class="fa-solid fa-comments"></i> Ingresar al Grupo de Consultas y Debate</a>
 		</section>
 
-
-		<!-- ========================================== -->
-		<!-- BLOQUE: CONTACTO                           -->
-		<!-- ========================================== -->
+		<!-- BLOQUE: CONTACTO -->
 		<section id="contacto" class="section-card">
-			<h2 class="card-title"><i class="fa-solid fa-address-book"></i> Vías de Contacto</h2>
+			<h2 class="card-title"><i class="fa-solid fa-address-book"></i> Inscripción y Vías de Contacto</h2>
 			<p>Si tienes alguna duda administrativa, problemas con el pago o consultas sobre las certificaciones, puedes comunicarte directamente conmigo:</p>
 			<br>
 			<ul class="contact-list">
 				<li><i class="fa-solid fa-envelope" style="color: var(--accent-blue);"></i> <strong>Email:</strong>&nbsp;<a href="mailto:yanzongonzalo86@gmail.com">yanzongonzalo86@gmail.com</a></li>
-				<li><i class="fa-solid fa-phone" style="color: var(--accent-green);"></i> <strong>Teléfono / WhatsApp:</strong>&nbsp;<a href="https://wa.me/5492613056920" target="_blank">+54 9 261 305-6920</a></li>
+				<li><i class="fa-solid fa-phone" style="color: var(--accent-green);"></i> <strong>Teléfono / WhatsApp:</strong>&nbsp;<a href="https://wa.me/5492613653626" target="_blank">+54 9 261 365-3626</a></li>
 			</ul>
+			<br>
+
+			<!-- FLUJO DE INSCRIPCIÓN -->
+			<div class="inscripcion-box">
+				<h3 style="color: var(--primary-dark); margin-bottom: 0.5rem;"><i class="fa-solid fa-cash-register" style="color: var(--accent-green);"></i> Proceso de Inscripción</h3>
+				<p><strong>Valor por persona:</strong> $16.000</p>
+				<br>
+				
+				<!-- PASO 1: Calcular y Solicitar Datos de Pago -->
+				<div class="paso-contenedor">
+					<p style="margin-bottom: 1rem;"><strong>Paso 1:</strong> Indicá cuántas personas asistirán para calcular el total y solicitar los datos de las cuentas bancarias para abonar:</p>
+					
+					<div class="form-group">
+						<label for="cantidad">Cantidad de personas:</label>
+						<input type="number" id="cantidad" class="form-control" value="1" min="1" oninput="calcularTotal()">
+					</div>
+
+					<div class="total-box">
+						Total estimado: <span id="totalPagar">$16.000</span>
+					</div>
+
+					<button onclick="solicitarDatosPago()" class="btn btn-orange">
+						<i class="fa-solid fa-file-invoice-dollar"></i> Solicitar Cuentas para Abonar
+					</button>
+				</div>
+
+				<!-- PASO 2: Envío de comprobante para solicitar Formulario -->
+				<div class="paso-contenedor">
+					<p style="margin-bottom: 1rem;"><strong>Paso 2:</strong> Una vez realizado el pago, adjuntá tu comprobante aquí abajo para formalizar la inscripción y solicitar el formulario correspondiente:</p>
+					
+					<form id="formInscripcion" onsubmit="enviarComprobante(event)">
+						<div class="form-group">
+							<label for="nombre">Nombre del titular que transfirió:</label>
+							<input type="text" id="nombre" class="form-control" placeholder="Ej: Juan Pérez" required>
+						</div>
+
+						<div class="form-group">
+							<label for="comprobante"><i class="fa-solid fa-paperclip"></i> Adjuntar Comprobante de Pago:</label>
+							<input type="file" id="comprobante" class="form-control" accept="image/*,.pdf" required>
+						</div>
+
+						<button type="submit" class="btn btn-whatsapp">
+							<i class="fa-brands fa-whatsapp"></i> Enviar Comprobante y Solicitar Formulario
+						</button>
+					</form>
+				</div>
+			</div>
+
 			<br>
 			<p style="color: var(--text-muted); font-size: 0.95rem;">Horario de atención a consultas particulares: lunes a viernes en horario comercial.</p>
 		</section>
@@ -235,6 +276,8 @@
 	</footer>
 
 	<script>
+		const numeroTelefono = "5492613653626";
+
 		function showSection(sectionId) {
 			const sections = document.querySelectorAll('.section-card');
 			sections.forEach(section => { section.classList.remove('active'); });
@@ -246,6 +289,41 @@
 			document.getElementById('tab-' + sectionId).classList.add('active');
 			
 			window.scrollTo({ top: 0, behavior: 'smooth' });
+		}
+
+		// Calcula el valor total dinámicamente
+		function calcularTotal() {
+			const costoPorPersona = 16000;
+			const cantidad = document.getElementById('cantidad').value;
+			const total = costoPorPersona * (cantidad > 0 ? cantidad : 1);
+			document.getElementById('totalPagar').innerText = '$' + total.toLocaleString('es-AR');
+		}
+
+		// PASO 1: Enviar mensaje solicitando datos para pagar
+		function solicitarDatosPago() {
+			const cantidad = document.getElementById('cantidad').value;
+			
+			const mensaje = `Hola solicito los datos para Abonar el CMA, de las ${cantidad} personas.`;
+			const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
+			window.open(urlWhatsApp, '_blank');
+		}
+
+		// PASO 2: Enviar comprobante ya abonado y solicitar formulario de inscripción
+		function enviarComprobante(event) {
+			event.preventDefault();
+			
+			const nombre = document.getElementById('nombre').value;
+			const cantidad = document.getElementById('cantidad').value;
+			const total = document.getElementById('totalPagar').innerText;
+
+			let mensaje = `Hola Lic. Gonzalo Yanzón, ya realicé el pago correspondiente.\n\n`;
+			mensaje += `*Titular de la cuenta:* ${nombre}\n`;
+			mensaje += `*Cupos abonados:* ${cantidad} personas\n`;
+			mensaje += `*Monto enviado:* ${total}\n\n`;
+			mensaje += `Adjunto mi comprobante y quedo a la espera para *solicitar formulario de inscripción*.`;
+
+			const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
+			window.open(urlWhatsApp, '_blank');
 		}
 	</script>
 </body>
