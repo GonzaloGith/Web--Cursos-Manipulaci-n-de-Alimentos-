@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cambio de Titulo| Lic. Gonzalo Yanzón</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+	<!-- [ESTILOS CSS: Podés colapsar este bloque para que no ocupe espacio] -->
+	<style>
+		:root {
+			--primary-dark: #0f172a;
+			--accent-blue: #0284c7;
+			--accent-green: #10b981;
+			--text-main: #334155;
+			--text-muted: #64748b;
+			--bg-light: #f8fafc;
+			--card-border: #e2e8f0;
+		}
+		* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+		body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.7; padding-top: 70px; }
+		nav { position: fixed; top: 0; left: 0; width: 100%; background-color: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); z-index: 1000; overflow-x: auto; white-space: nowrap; }
+		.menu-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; padding: 0 1rem; }
+		nav a { display: inline-block; color: #94a3b8; text-decoration: none; padding: 1.2rem 1rem; font-size: 0.9rem; font-weight: 500; transition: color 0.2s, border-color 0.2s; border-bottom: 3px solid transparent; cursor: pointer; }
+		nav a:hover, nav a.active { color: #ffffff; border-bottom-color: var(--accent-blue); }
+		header { background-color: var(--primary-dark); background-image: radial-gradient(circle at top right, rgba(2, 132, 199, 0.15), transparent); color: #ffffff; text-align: center; padding: 4rem 1.5rem 3rem 1.5rem; }
+		header h1 { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.05em; margin-bottom: 0.5rem; }
+		header p { font-size: 1.1rem; font-weight: 300; color: #94a3b8; }
+		main { max-width: 800px; margin: 2rem auto 4rem auto; padding: 0 1.5rem; }
+		.section-card { background-color: #ffffff; border: 1px solid var(--card-border); border-radius: 16px; padding: 2.5rem; margin-bottom: 3rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); display: none; }
+		.section-card.active { display: block; }
+		.card-title { color: var(--primary-dark); font-size: 1.6rem; font-weight: 600; letter-spacing: -0.03em; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--card-border); padding-bottom: 0.75rem; }
+		.card-title i { color: var(--accent-blue); }
+		.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+		.info-box { background-color: var(--bg-light); border: 1px solid var(--card-border); padding: 1.25rem; border-radius: 12px; display: flex; align-items: center; gap: 15px; }
+		.info-box i { font-size: 1.5rem; color: var(--accent-blue); background: rgba(2, 132, 199, 0.1); padding: 0.6rem; border-radius: 10px; }
+		.info-box h4 { color: var(--primary-dark); font-size: 1.05rem; }
+		ul { list-style: none; margin: 1rem 0; }
+		li { margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 12px; }
+		li i { color: var(--accent-green); margin-top: 5px; }
+		.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; background-color: var(--accent-blue); color: #ffffff; text-align: center; padding: 1rem; border-radius: 10px; text-decoration: none; font-weight: 600; margin-top: 1rem; transition: background-color 0.2s; box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.2); }
+		.btn:hover { background-color: #0369a1; }
+		.btn-outline { background-color: transparent; color: var(--accent-blue); border: 2px solid var(--accent-blue); box-shadow: none; }
+		.btn-outline:hover { background-color: rgba(2, 132, 199, 0.05); }
+		.contact-list li { font-size: 1.1rem; padding: 0.5rem; background-color: var(--bg-light); border: 1px solid var(--card-border); border-radius: 10px; margin-bottom: 1rem; }
+		.contact-list a { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
+		.contact-list a:hover { text-decoration: underline; }
+		footer { background-color: var(--primary-dark); color: #64748b; text-align: center; padding: 2.5rem 1.5rem; font-size: 0.85rem; border-top: 1px solid #1e293b; }
+		@media (max-width: 650px) {
+			body { padding-top: 60px; }
+			header h1 { font-size: 1.8rem; }
+			.menu-container { justify-content: flex-start; }
+			nav a { padding: 1rem 0.8rem; font-size: 0.85rem; }
+			.section-card { padding: 1.5rem; }
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- ========================================== -->
+	<!-- MENU DE NAVEGACION                         -->
+	<!-- ========================================== -->
+	<nav>
+		<div class="menu-container">
+			<a onclick="showSection('presentacion')" id="tab-presentacion" class="active"><i class="fa-solid fa-user"></i> Presentación</a>
+			<a onclick="showSection('cursado')" id="tab-cursado"><i class="fa-solid fa-graduation-cap"></i> Cursado</a>
+			<a onclick="showSection('carnet')" id="tab-carnet"><i class="fa-solid fa-id-card"></i> El Carnet</a>
+			<a onclick="showSection('material')" id="tab-material"><i class="fa-solid fa-folder-open"></i> Material</a>
+			<a onclick="showSection('consultas')" id="tab-consultas"><i class="fa-solid fa-comments"></i> Consultas</a>
+			<a onclick="showSection('contacto')" id="tab-contacto"><i class="fa-solid fa-address-book"></i> Contacto</a>
+		</div>
+	</nav>
+
+	<header>
+		<h1>Curso Manipulación de Alimentos</h1>
+		<p>Capacitación Oficial • <strong>Lic. Gonzalo Yanzón</strong></p>
+	</header>
+
+	<main>
+
+		<!-- ========================================== -->
+		<!-- BLOQUE: PRESENTACIÓN                       -->
+		<!-- ========================================== -->
+		<section id="presentacion" class="section-card active">
+			<h2 class="card-title"><i class="fa-solid fa-user-tie"></i> Presentación</h2>
+			<p>¡Bienvenidos a todos! Mi nombre es <strong>Gonzalo Yanzón</strong>, Licenciado en Bromatología (Mat. 616), y seré el capacitador encargado de guiarlos a lo largo de este trayecto formativo.</p>
+			<br>
+			<p>Este espacio está diseñado con un objetivo clave: brindarles las herramientas necesarias para <strong>renovar su Carnet de Manipulador de Alimentos</strong> o para <strong>obtenerlo por primera vez</strong>, cumpliendo de forma estricta con lo dictado por la <strong>Ley 18.284, art. 21</strong> (Código Alimentario Argentino).</p>
+			<br>
+			<hr style="border: 0; border-top: 1px solid var(--card-border); margin: 1rem 0;">
+			<br>
+			<h4 style="color: var(--primary-dark); font-size: 1.2rem; margin-bottom: 1rem;"><i class="fa-solid fa-users" style="color: var(--accent-blue);"></i> ¿A quién está destinado?</h4>
+			<p>Esta capacitación es de carácter obligatorio y está dirigida a toda persona que realice actividades en contacto con alimentos en establecimientos donde se elaboren, fraccionen, almacenen, transporten o comercialicen, tales como:</p>
+			<br>
+			<ul>
+				<li><i class="fa-solid fa-check" style="color: var(--accent-green);"></i> Personal gastronómico (cocineros, mozos, ayudantes de cocina, bacheros, encargados, baristas, etc).</li>
+				<li><i class="fa-solid fa-check" style="color: var(--accent-green);"></i> Personal de comercios (supermercados, despensas, fiambrerías, carnicerías).</li>
+				<li><i class="fa-solid fa-check" style="color: var(--accent-green);"></i> Emprendedores y elaboradores de alimentos artesanales o viandas.</li>
+				<li><i class="fa-solid fa-check" style="color: var(--accent-green);"></i> Fábrica de Alimentos (línea de producción, distribución y logística, empaque, limpieza, etc).</li>
+				<li><i class="fa-solid fa-check" style="color: var(--accent-green);"></i> Transportistas y distribuidores de sustancias alimenticias.</li>
+				<li><i class="fa-solid fa-check" style="color: var(--accent-green);"></i> Toda persona interesada.</li>
+			</ul>
+		</section>
+
+
+		<!-- ========================================== -->
+		<!-- BLOQUE: CURSADO (DESARROLLO)               -->
+		<!-- ========================================== -->
+		<section id="cursado" class="section-card">
+			<h2 class="card-title"><i class="fa-solid fa-graduation-cap"></i> Desarrollo del Curso</h2>
+			<p>El curso se dictará completamente a través del grupo de WhatsApp en modalidad <strong>ASINCRÓNICA</strong>. Esto significa que no hay horarios fijos de conexión; cada participante gestiona sus tiempos y visualiza los contenidos según su disponibilidad.</p>
+			<br>
+			<h4 style="color: var(--primary-dark);">¿Qué actividades realizaremos?</h4>
+			<ul>
+				<li><i class="fa-solid fa-square-poll-horizontal" style="color: var(--accent-blue);"></i> Encuestas rápidas de interacción.</li>
+				<li><i class="fa-solid fa-gamepad" style="color: var(--accent-blue);"></i> Juegos interactivos didácticos.</li>
+				<li><i class="fa-solid fa-paste" style="color: var(--accent-blue);"></i> Análisis de situaciones con casos hipotéticos y videos cortos.</li>
+			</ul>
+			<br>
+			<h4 style="color: var(--primary-dark);">Requisitos para aprobar:</h4>
+			<p>Mantener una participación activa en las dinámicas diarias propuestas y completar satisfactoriamente el <strong>Examen Final</strong> mediante un enlace de <strong>Google Forms</strong>.</p>
+		</section>
+
+
+		<!-- ========================================== -->
+		<!-- BLOQUE: EL CARNET                          -->
+		<!-- ========================================== -->
+		<section id="carnet" class="section-card">
+			<h2 class="card-title"><i class="fa-solid fa-file-invoice"></i> Información del Carnet (Art. 21 CAA)</h2>
+			<p>Conozca en detalle las características legales, requisitos y obligaciones de la certificación oficial regulada por el Código Alimentario Argentino:</p>
+
+			<div class="grid-2">
+				<div class="info-box">
+					<i class="fa-solid fa-earth-americas"></i>
+					<div>
+						<h4>Alcance Nacional</h4>
+						<p>Es obligatorio para toda persona que realice actividades en contacto con alimentos o materias primas. Es personal, intransferible y válido en todo el país.</p>
+					</div>
+				</div>
+				<div class="info-box">
+					<i class="fa-solid fa-calendar-days"></i>
+					<div>
+						<h4>Vigencia por 3 Años</h4>
+						<p>El carnet tiene una validez de 3 años a partir de su fecha de emisión. Al cumplirse el plazo, se debe tramitar su renovación.</p>
+					</div>
+				</div>
+				<div class="info-box">
+					<i class="fa-solid fa-graduation-cap"></i>
+					<div>
+						<h4>Curso Obligatorio</h4>
+						<p>Se debe cursar y aprobar una capacitación en Manipulación Segura (mínimo 7 horas reloj) con evaluación obligatoria sobre inocuidad y alimentos libres de gluten.</p>
+					</div>
+				</div>
+				<div class="info-box">
+					<i class="fa-solid fa-user-graduate"></i>
+					<div>
+						<h4>Excepción por Título Afín</h4>
+						<p>Quienes posean un título técnico, terciario o universitario que acredite formación en alimentos quedan exceptuados del curso, pero deben rendir el examen.</p>
+					</div>
+				</div>
+				<div class="info-box">
+					<i class="fa-solid fa-arrows-rotate"></i>
+					<div>
+						<h4>Proceso de Renovación</h4>
+						<p>Para la renovación se exige aprobar un nuevo examen. En caso de reprobar dos veces consecutivas, se deberá realizar obligatoriamente el curso completo otra vez.</p>
+					</div>
+				</div>
+				<div class="info-box">
+					<i class="fa-solid fa-id-card-clip"></i>
+					<div>
+						<h4>Custodia y Obligaciones</h4>
+						<p>El empleador debe garantizar el acceso al carnet. La credencial original debe estar en la administración del local (salvo personal itinerante).</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- ========================================== -->
+		<!-- BLOQUE: MATERIAL                           -->
+		<!-- ========================================== -->
+		<section id="material" class="section-card">
+			<h2 class="card-title"><i class="fa-solid fa-book-bookmark"></i> Material de Estudio y Prácticas</h2>
+			<p>Para asegurar que dispongas de todas las herramientas de estudio de manera cómoda, dividiremos los recursos así:</p>
+			<br>
+			<ul>
+				<li><i class="fa-solid fa-circle-dot"></i> <strong>Contenidos en el Grupo:</strong> Envío periódico de resúmenes prácticos ideales para leer en el celular.</li>
+				<li><i class="fa-solid fa-circle-dot"></i> <strong>Link de Acceso Permanente:</strong> Un repositorio digital en la nube con todo el Material Complementario.</li>
+			</ul>
+			<a href="#" target="_blank" class="btn btn-outline"><i class="fa-solid fa-cloud-arrow-down"></i> Descargar Material Complementario</a>
+		</section>
+
+
+		<!-- ========================================== -->
+		<!-- BLOQUE: CONSULTAS                          -->
+		<!-- ========================================== -->
+		<section id="consultas" class="section-card">
+			<h2 class="card-title"><i class="fa-solid fa-circle-question"></i> Dudas, Consultas y Comunidad</h2>
+			<p>Para garantizar una cursada ordenada y fluida, nos organizaremos bajo las siguientes pautas de convivencia:</p>
+			<br>
+			<ul>
+				<li><i class="fa-solid fa-bullhorn" style="color: var(--accent-blue);"></i> <strong>Chat Principal de WhatsApp:</strong> Uso exclusivo del capacitador para enviar materiales y consignas oficiales.</li>
+				<li><i class="fa-solid fa-users" style="color: var(--accent-blue);"></i> <strong>Grupo de Interacción:</strong> Para debatir y consultar, ingresando al enlace secundario en la descripción del chat.</li>
+			</ul>
+			<br>
+			<p><strong>Comunidad a largo plazo:</strong> Este espacio continuará activo tras el curso para difundir novedades legales y futuros proyectos.</p>
+			<a href="#" target="_blank" class="btn btn-outline"><i class="fa-solid fa-comments"></i> Ingresar al Grupo de Consultas y Debate</a>
+		</section>
+
+
+		<!-- ========================================== -->
+		<!-- BLOQUE: CONTACTO                           -->
+		<!-- ========================================== -->
+		<section id="contacto" class="section-card">
+			<h2 class="card-title"><i class="fa-solid fa-address-book"></i> Vías de Contacto</h2>
+			<p>Si tienes alguna duda administrativa, problemas con el pago o consultas sobre las certificaciones, puedes comunicarte directamente conmigo:</p>
+			<br>
+			<ul class="contact-list">
+				<li><i class="fa-solid fa-envelope" style="color: var(--accent-blue);"></i> <strong>Email:</strong>&nbsp;<a href="mailto:yanzongonzalo86@gmail.com">yanzongonzalo86@gmail.com</a></li>
+				<li><i class="fa-solid fa-phone" style="color: var(--accent-green);"></i> <strong>Teléfono / WhatsApp:</strong>&nbsp;<a href="https://wa.me/5492613056920" target="_blank">+54 9 261 305-6920</a></li>
+			</ul>
+			<br>
+			<p style="color: var(--text-muted); font-size: 0.95rem;">Horario de atención a consultas particulares: lunes a viernes en horario comercial.</p>
+		</section>
+
+	</main>
+
+	<footer>
+		<p><strong>Lic. Gonzalo Yanzón</strong> — Licenciado en Bromatología (Mat. 616)</p>
+		<p>Curso de Manipulación de Alimentos • 2026</p>
+	</footer>
+
+	<script>
+		function showSection(sectionId) {
+			const sections = document.querySelectorAll('.section-card');
+			sections.forEach(section => { section.classList.remove('active'); });
+			
+			const tabs = document.querySelectorAll('nav a');
+			tabs.forEach(tab => { tab.classList.remove('active'); });
+			
+			document.getElementById(sectionId).classList.add('active');
+			document.getElementById('tab-' + sectionId).classList.add('active');
+			
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		}
+	</script>
+</body>
+</html>
