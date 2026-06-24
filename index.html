@@ -235,7 +235,7 @@
 					</div>
 
 					<div class="total-box">
-						Total estimado: <span id="totalPagar">$16.000</span>
+						Total estimado: <span id="totalPagar">$20.000</span>
 					</div>
 
 					<button onclick="solicitarDatosPago()" class="btn btn-orange">
@@ -294,7 +294,7 @@
 
 		// Calcula el valor total dinámicamente
 		function calcularTotal() {
-			const costoPorPersona = 16000;
+			const costoPorPersona = 20000;
 			const cantidad = document.getElementById('cantidad').value;
 			const total = costoPorPersona * (cantidad > 0 ? cantidad : 1);
 			document.getElementById('totalPagar').innerText = '$' + total.toLocaleString('es-AR');
