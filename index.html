@@ -295,7 +295,7 @@
 
 		// Calcula el valor total dinámicamente
 		function calcularTotal() {
-			const costoPorPersona = 20000;
+			const costoPorPersona = 16000;
 			const cantidad = document.getElementById('cantidad').value;
 			const total = costoPorPersona * (cantidad > 0 ? cantidad : 1);
 			document.getElementById('totalPagar').innerText = '$' + total.toLocaleString('es-AR');
